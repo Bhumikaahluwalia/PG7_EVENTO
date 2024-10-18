@@ -1,0 +1,825 @@
+<style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Services</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Flexbox Layout for Desktop */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    border: 2px solid #fff;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    line-height: 40px;
+    color: #333;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For Tablets and Smaller Screens */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .footer-section ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .social-icons {
+        text-align: center;
+    }
+}
+
+/* For Mobile Phones */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+
+    .footer-section ul li {
+        text-align: center;
+    }
+
+    .footer-section ul li a {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .footer-section h3 {
+        font-size: 18px;
+    }
+
+    .social-icons a {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+        /* Header Section */
+header {
+    background: white; /* White background for a clean look */
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    border-bottom: 1px solid #e6e6e6; /* Optional bottom border for separation */
+}
+
+.container {
+    width: 90%; /* Use 90% width for better alignment */
+    margin: 0 auto; /* Center the content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Section */
+.logo {
+    text-align: center;
+    flex-grow: 1; /* Allow the logo to occupy central space */
+}
+
+.logo img {
+    height: 80px; /* Set height of logo */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Navigation */
+nav {
+    font-family: 'Montserrat', sans-serif; /* Use a clean sans-serif font */
+}
+
+/* Left and Right Navigation */
+.nav-left, .nav-right {
+    display: flex;
+    gap: 30px; /* Space between links */
+}
+
+.nav-left {
+    justify-content: flex-start; /* Align left links to the start */
+}
+
+.nav-right {
+    justify-content: flex-end; /* Align right links to the end */
+}
+
+/* Links Styling */
+nav ul {
+    list-style-type: none; /* Remove default bullet points */
+    display: flex;
+    gap: 20px; /* Adjust gap between links */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Default link color */
+    padding: 10px 15px;
+    border-radius: 5px; /* Round corners on hover */
+    font-size: 18px; /* Font size */
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover transitions */
+}
+
+/* Hover effect for links */
+nav ul li a:hover {
+    background-color: rgba(246, 240, 240, 0.5);
+    color: #eec1ad;
+}
+
+/* Active Link Styling */
+nav ul li a.active {
+    color: #eec1ad; /* Different color for the active page link */
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+        z-index: 1000; /* Ensure dropdown is on top */
+    
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position dropdown below the Service link */
+    left: 0; /* Align dropdown to the left */
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Add shadow to dropdown */
+    border-radius: 5px; /* Rounded corners */
+    min-width: 160px;
+    z-index: 1; /* Ensure dropdown is on top */
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #eec1ad;
+    color: white;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block; /* Display dropdown when hovered */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-left, .nav-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 60px; /* Adjust logo size on smaller screens */
+    }
+}
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Only hide horizontal scrolling */
+        }
+
+        /* Content that will be displayed after loading */
+        .content {
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.75s; /* Delayed by 0.75 seconds */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero {
+    background: url('wedding (page bg).webp') no-repeat center center;
+    background-size: cover;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    color: #fff; /* Set text color to white for contrast */
+    overflow: hidden;
+    display: flex; /* Flexbox to center content */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5); /* Grayish shadow overlay */
+    width: 100%; /* Make the overlay span the full width */
+    height: 100%; /* Make the overlay span the full height */
+    position: absolute; /* Position overlay absolutely within hero */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px; /* Add padding for better text spacing */
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em; /* Adjust font size */
+    color: #fff; /* White color for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow to stand out */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2em; /* Increase font size for readability */
+    color: #fff; /* White color for contrast */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for clarity */
+    margin-top: 0;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+button {
+    background: linear-gradient(135deg, #FF4081, #FF80AB);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #FF80AB, #FF4081);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+        .search-bar {
+            margin: 20px 0;
+        }
+
+        .search-bar select,
+        .search-bar button {
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+        .wedding-types {
+    padding: 50px;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.wedding-card {
+    position: relative;
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: transparent; /* Ensure transparency */
+    border: none; /* Remove any border */
+    padding: 0; /* Remove padding */
+    margin: 0;  /* Remove margin */
+}
+
+.wedding-card img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border: none !important; /* Force remove any border */
+    box-shadow: none !important; /* Remove any shadow */
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any paddings */
+}
+
+.wedding-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.wedding-card h3 {
+    color: black;
+    font-size: 1.5em;
+    margin-bottom: 15px; /* Spacing between name and image */
+}
+
+.button-container {
+    margin-top: 15px;
+}
+
+.wedding-card button {
+    background-color: #FF4081;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.wedding-card button:hover {
+    background-color: #FF80AB;
+}
+        /* Footer Section */
+        footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    margin-bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 60px;
+    text-align: left; /* Align text to the left */
+    max-width: 1200px; /* Ensure a maximum width */
+    margin: 0 auto; /* Center the footer content */
+}
+
+.logo h3 {
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.contact-info h3,
+.footer-links h3,
+.newsletter h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.contact-info,
+.footer-links,
+.newsletter {
+    margin: 0;
+}
+
+.contact-info p,
+.footer-links a {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+.footer-links a {
+    display: block;
+    color: #fff;
+    margin-bottom: 5px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff6600;
+}
+
+input[type="email"] {
+    width: 250px;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 8px 20px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e65c00; /* Slightly darker on hover */
+}
+
+.newsletter form {
+    display: flex;
+    align-items: center;
+}
+
+.newsletter input[type="email"] {
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+button {
+    border-radius: 5px;
+}
+
+.footer-container div {
+    flex-basis: 25%; /* Distribute space evenly */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-container div {
+        margin-bottom: 20px;
+        flex-basis: 100%;
+    }
+}
+
+
+        /* Button Styles */
+        button {
+            background: linear-gradient(135deg, #FF4081, #FF80AB);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #FF80AB, #FF4081);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: absolute; /* Position relative to the footer */
+            bottom: 20px; /* 20px above the bottom of the footer */
+            right: 20px; /* 20px from the right side of the footer */
+            background: #FF4081;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            z-index: 1000; /* Keeps the button above other content */
+        }
+
+        .back-button:hover {
+            background: #FF80AB;
+        }
+
+        .back-button:focus {
+            outline: none;
+        }
+        .wedding-types {
+    padding: 50px;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.wedding-card {
+    position: relative;
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: transparent; /* Ensure transparency */
+    border: none; /* Remove any border */
+    padding: 0; /* Remove padding */
+    margin: 0;  /* Remove margin */
+}
+
+.wedding-card img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border: none !important; /* Force remove any border */
+    box-shadow: none !important; /* Remove any shadow */
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any paddings */
+}
+
+.wedding-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.wedding-card h3 {
+    color: black;
+    font-size: 1.5em;
+    margin-bottom: 15px; /* Spacing between name and image */
+}
+
+.button-container {
+    margin-top: 15px;
+}
+
+.wedding-card button {
+    background-color: #FF4081;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.wedding-card button:hover {
+    background-color: #FF80AB;
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile-first approach */
+/* Container */
+.container {
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.nav-left ul,
+.nav-right ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo img {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Video Section */
+.background-video {
+  width: 100%;
+  height: auto;
+}
+
+.home-video-section {
+  position: relative;
+  text-align: center;
+}
+
+.website-name {
+  font-size: 24px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.call-now-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+}
+
+/* Services Section */
+.services-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-item {
+  margin: 20px 0;
+  width: 90%;
+}
+
+.service-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Footer */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-links a {
+  display: block;
+  margin: 10px 0;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Feedback Section */
+.feedback-section .container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.carousel-item {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Media Queries */
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  nav ul {
+    flex-direction: row;
+  }
+
+  .nav-left ul,
+  .nav-right ul {
+    flex-direction: row;
+  }
+
+  .logo img {
+    max-width: 150px;
+  }
+
+  .home-video-section .website-name {
+    font-size: 36px;
+  }
+
+  /* Services Section */
+  .services-section {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .service-item {
+    width: 30%;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 80%;
+  }
+
+  .services-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .service-item {
+    width: 30%;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .testimonial-title {
+    font-size: 36px;
+  }
+}
+
+
+    </style>
+</head>
