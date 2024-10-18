@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Destination Wedding</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        /* Header Section */
+        header {
+    background: linear-gradient(white);
+    padding: 10px 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    position: relative; /* Ensures it stays in place */
+    z-index: 10; /* Makes sure it is above other content */
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    justify-content: center; /* Center the logo */
+    flex-grow: 0; /* Prevent the logo from expanding too much */
+    max-width: 150px; /* Set a maximum width for the logo */
+}
+.logo img {
+    height: 80px; /* Adjust this value as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', Georgia, 'Times New Roman', Times, serif;
+}
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 30px;
+}
+.nav-left {
+    justify-content: flex-end;
+    margin-right: auto;
+}
+.nav-right {
+    justify-content: flex-start;
+    margin-left: auto;
+}
+/* Navigation Links */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    background-color: rgba(246, 240, 240, 0.2);
+    color: #eec1ad;
+}
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.dropdown-content a {
+    color: #0c1038;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+.dropdown-content a:hover {
+    background-color: #eec1ad;
+    color: #fff;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Ensure there's enough space between header and content */
+body {
+    margin: 0;
+    padding: 0;
+}
+header, nav {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: white;
+        }
+
+        .hero {
+            background-image: url('c:\\Users\\mehak\\Downloads\\hero section background destination wedding.h');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            z-index: 2;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            z-index: 2;
+            animation: fadeInUp 1.5s ease-out 0.5s;
+        }
+
+        .hero button {
+            background-color: #ff4081;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+            z-index: 2;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: fadeInUp 1.5s ease-out 1s;
+        }
+
+        .hero button:hover {
+            background-color: #e33374;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .parallax {
+        background-color: #3a5b5b; /* New background color (dark teal) */
+        height: 250px; /* Height of the section */
+        color: #f9e79f; /* Softer yellow text color for warmth */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        margin: 0 auto; /* Center the section */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    }
+
+    .parallax .overlay {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(34, 34, 34, 0.5); /* Darker overlay for better contrast */
+        z-index: 1;
+        border-radius: 10px; /* Rounded corners for the overlay */
+    }
+
+    .parallax h2 {
+        font-size: 2.5rem; /* Increased font size for prominence */
+        font-weight: 700; /* Bolder font weight */
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Stronger shadow for visibility */
+        z-index: 2; /* Ensure text is above overlay */
+        animation: fadeInUp 1.5s ease-out; /* Add animation */
+    }
+
+    .parallax p {
+        font-size: 1.5rem; /* Larger font size for visibility */
+        max-width: 700px; /* Slightly increased width */
+        margin: 0 auto;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Stronger shadow for visibility */
+        z-index: 2; /* Ensure text is above overlay */
+        animation: fadeInUp 1.5s ease-out 0.5s; /* Add animation */
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+        .section {
+            padding: 60px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Destinations Section Styles */
+        .destination-card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .destination-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .destination-card img:hover {
+            transform: scale(1.1);
+        }
+
+        .destination-card .card-body {
+            padding: 1rem;
+        }
+
+        .destination-card .btn-primary {
+            background-color: #ff4081;
+            border-color: #ff4081;
+        }
+
+        .destination-card .btn-primary:hover {
+            background-color: #e33374;
+            border-color: #e33374;
+        }
+
+        /* FAQ Section Styles */
+        .faq .accordion-button {
+            background-color: #f8f9fa;
+            color: #333;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .faq .accordion-button:not(.collapsed) {
+            color: #ff4081;
+            background-color: #fff;
+            border-color: #ff4081;
+        }
+
+        .faq .accordion-body {
+            background-color: #f4f4f4;
+            color: #666;
+        }
+
+        .faq .accordion-button::after {
+            content: "\f067";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #ff4081;
+        }
+
+        .faq .accordion-button.collapsed::after {
+            content: "\f068";
+        }
+
+        /* Scroll to Top Button */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            display: none; /* Hidden by default */
+            border: none;
+            outline: none;
+            background-color: #ff4081;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #e33374;
+        }
+
+        /* Countdown Timer Styles */
+        .countdown {
+            font-size: 2rem;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #ff4081;
+            color: white;
+            border-radius: 10px;
+        }
+        .footer-container {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr;
+  align-items: center;
+}
+.contact-info,
+.footer-links,
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center; /* Center the text */
+}
+.logo,
+.social-links {
+  display: flex;
+  flex-direction: column; /* Align items in a column */
+  align-items: center;
+  padding: 10px;
+}
+.social-links a {
+  color: #fff;
+  margin: 0 5px;
+  font-size: 20px;
+}
+input[type="email"] {
+  width: 200px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+button {
+  padding: 8px 20px;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0; /* Increased padding to allow for better spacing */
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Spread the content evenly */
+    align-items: flex-start; /* Align content at the top */
+    padding: 0 60px; /* Added padding to the sides */
+}
+
+.logo h3 {
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    margin: 0; /* Ensure no extra space under the logo text */
+}
+
+.contact-info h3,
+.footer-links h3,
+.newsletter h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.contact-info,
+.footer-links,
+.newsletter {
+    margin: 0;
+}
+
+.contact-info p,
+.footer-links a {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+input[type="email"] {
+    width: 250px;
+    padding: 8px;
+    margin-right: 10px; /* Ensure spacing between input and button */
+}
+
+button {
+    padding: 8px 20px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-links a {
+    display: block;
+    color: #fff;
+    margin-bottom: 5px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff6600;
+}
+
+.newsletter form {
+    display: flex;
+    align-items: center; /* Align input and button on the same line */
+}
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="nav-left">
+                <ul>
+                    <li><a href="file:///C:/Users/lalit/OneDrive/Desktop/EVENTO/aboutus.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Service</a>
+                        <div class="dropdown-content">
+                            <a href="file:///C:/Users/lalit/OneDrive/Desktop/EVENTO/wedding.html">Wedding</a>
+                            <a href="file:///C:/Users/lalit/OneDrive/Desktop/EVENTO/themedparties.html">Theme Parties</a>
+                            <a href="file:///C:/Users/lalit/OneDrive/Desktop/EVENTO/cultural.html">Cultural Parties</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logo">
+                <img src="logo2.jpg" alt="Description of image" class="center-image">
+            </div>
+            <nav class="nav-right">
+                <ul>
+                    <li><a href="file:///C:/Users/lalit/OneDrive/Desktop/EVENTO/contactus.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Your Dream Destination Wedding Awaits</h1>
+        <p>Explore the perfect locations and packages for your unforgettable celebration.</p>
+        <button onclick="window.location.href='contactus.html'">Get Started</button>
+    </div>
+
+    <!-- Parallax Section -->
+    <div class="parallax">
+        <div class="overlay"></div>
+        <h2>Experience the Magic of a Destination Wedding</h2>
+        <p>From sandy beaches to majestic mountains, choose the destination that fits your dream wedding.</p>
+    </div>
+<!-- Wedding Packages Section -->
+<div class="section" id="packages" style="max-width: 1200px; margin: 0 auto;">
+    <h2>Our Wedding Packages</h2>
+    <p>Choose from our variety of packages designed to make your wedding day as perfect as you’ve always dreamed.</p>
+    <div class="pricing-table">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="basic-tab" data-bs-toggle="tab" href="#basic" role="tab" aria-controls="basic" aria-selected="true">Basic</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="premium-tab" data-bs-toggle="tab" href="#premium" role="tab" aria-controls="premium" aria-selected="false">Premium</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="luxury-tab" data-bs-toggle="tab" href="#luxury" role="tab" aria-controls="luxury" aria-selected="false">Luxury</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent" style="padding: 20px;">
+            <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
+                <div class="card pricing-table" style="max-width: 80%; margin: 0 auto;">
+                    <div class="card-header">
+                        Basic Package
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">₹50,000</h5>
+                        <ul>
+                            <li>Venue Rental</li>
+                            <li>Basic Catering</li>
+                            <li>6 Hours Photography</li>
+                            <li>Minimal Decor</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="basic-package-booking.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="premium" role="tabpanel" aria-labelledby="premium-tab">
+                <div class="card pricing-table" style="max-width: 80%; margin: 0 auto;">
+                    <div class="card-header">
+                        Premium Package
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">₹1,00,000</h5>
+                        <ul>
+                            <li>Venue Rental</li>
+                            <li>Full Catering</li>
+                            <li>12 Hours Photography</li>
+                            <li>Decor and Lighting</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="premium-package-booking.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="luxury" role="tabpanel" aria-labelledby="luxury-tab">
+                <div class="card pricing-table" style="max-width: 80%; margin: 0 auto;">
+                    <div class="card-header">
+                        Luxury Package
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">₹2,00,000</h5>
+                        <ul>
+                            <li>Venue Rental</li>
+                            <li>Gourmet Catering</li>
+                            <li>24 Hours Photography</li>
+                            <li>Full Decor and Entertainment</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="luxury-package-booking.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Popular Destinations Section -->
+<div class="section">
+    <h2>Popular Wedding Destinations</h2>
+    <p>Explore some of the most sought-after locations for your dream wedding.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card destination-card">
+                    <img src="c:\\Users\\mehak\\Downloads\\bali destination wedding.jpeg" class="card-img-top" alt="Bali">
+                    <div class="card-body">
+                        <h5 class="card-title">Bali, Indonesia</h5>
+                        <p class="card-text">Experience the exotic beauty and tranquility of Bali.</p>
+                        <!-- Link to Bali Destination Page -->
+                        <a href="bali-destination.html" class="btn btn-primary">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card destination-card">
+                    <img src="c:\\Users\\mehak\\Downloads\\santorini greece destination wedding.jpeg" class="card-img-top" alt="Santorini">
+                    <div class="card-body">
+                        <h5 class="card-title">Santorini, Greece</h5>
+                        <p class="card-text">Famous for its white-washed buildings and breathtaking sunsets.</p>
+                        <!-- Link to Santorini Destination Page -->
+                        <a href="santorini-destination.html" class="btn btn-primary">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card destination-card">
+                    <img src="c:\\Users\\mehak\\Downloads\\paris destination wedding image.jpg" class="card-img-top" alt="Paris">
+                    <div class="card-body">
+                        <h5 class="card-title">Paris, France</h5>
+                        <p class="card-text">The city of love, perfect for a romantic wedding ceremony.</p>
+                        <!-- Link to Paris Destination Page -->
+                        <a href="paris-destination.html" class="btn btn-primary">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card destination-card">
+                    <img src="c:\\Users\\mehak\\Downloads\\maldives destination wedding.jpeg" class="card-img-top" alt="Maldives">
+                    <div class="card-body">
+                        <h5 class="card-title">Maldives</h5>
+                        <p class="card-text">A paradise of white sandy beaches and clear blue waters.</p>
+                        <!-- Link to Maldives Destination Page -->
+                        <a href="maldives-destination.html" class="btn btn-primary">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card destination-card">
+                    <img src="c:\\Users\\mehak\\Downloads\\tuscany italy destination wedding.jpeg" class="card-img-top" alt="Tuscany">
+                    <div class="card-body">
+                        <h5 class="card-title">Tuscany, Italy</h5>
+                        <p class="card-text">Beautiful vineyards and rolling hills make for a romantic setting.</p>
+                        <!-- Link to Tuscany Destination Page -->
+                        <a href="tuscany-destination.html" class="btn btn-primary">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card destination-card">
+                    <img src="c:\\Users\\mehak\\Downloads\\cancun mexico destination wedding.jpg" class="card-img-top" alt="Cancun">
+                    <div class="card-body">
+                        <h5 class="card-title">Cancun, Mexico</h5>
+                        <p class="card-text">A vibrant destination known for its stunning beaches and nightlife.</p>
+                        <!-- Link to Cancun Destination Page -->
+                        <a href="cancun-destination.html" class="btn btn-primary">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- FAQ Section -->
+    <div class="section faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is the best time of year for a destination wedding?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        The best time for a destination wedding depends on the location. Generally, spring and fall are popular for their moderate weather.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        How do I choose a destination?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Consider factors like your budget, guest accessibility, and the type of scenery you want for your wedding.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Are there additional costs I should be aware of?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, consider travel costs, accommodation for guests, and potential venue fees that may not be included in the package.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section wedding-cost">
+        <h2>Wedding Cost Calculator</h2>
+        <div class="form-group">
+            <label for="guestCount">Enter Guest Count:</label>
+            <input type="number" id="guestCount" class="form-control" min="1" placeholder="Number of Guests">
+        </div>
+        <button onclick="calculateCost()" class="btn btn-primary mt-2">Calculate Cost</button>
+        <p id="calculatedCost">Estimated Cost: </p>
+    </div>
+    
+    <script>
+    function calculateCost() {
+        // Get the value of the guest count input
+        const guestCount = document.getElementById('guestCount').value;
+    
+        // Check if the input is a valid number
+        if (!guestCount || guestCount <= 0) {
+            alert("Please enter a valid number of guests.");
+            return; // Exit the function if invalid input
+        }
+    
+        const costPerGuest = 200; // Example cost per guest
+        const totalCost = guestCount * costPerGuest;
+    
+        // Display the estimated cost
+        document.getElementById('calculatedCost').innerText = Estimated Cost: ₹${totalCost};
+    
+        // Store the estimated cost in local storage
+        localStorage.setItem('estimatedCost', totalCost);
+    }
+    
+    // Function to retrieve and display the stored estimated cost when the page loads
+    window.onload = function() {
+        const storedCost = localStorage.getItem('estimatedCost');
+        if (storedCost) {
+            document.getElementById('calculatedCost').innerText = Estimated Cost: ₹${storedCost};
+        }
+    }
+    </script>
+    <!-- Countdown Timer Section -->
+    <div class="section" id="countdown">
+        <h2>Countdown to Your Wedding</h2>
+        <p class="countdown" id="countdownTimer"></p>
+    </div>
+
+
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Countdown Timer
+        const weddingDate = new Date("2024-12-31T00:00:00").getTime(); // Set your wedding date here
+
+        const countdownTimer = document.getElementById("countdownTimer");
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownTimer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                countdownTimer.innerHTML = "The wedding has started!";
+            }
+        }, 1000);
+        
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+  <!-- Extended Footer Section -->
+  <footer>
+    <div class="footer-container">
+        <div class="logo">
+            <h3>EVENTO</h3>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>+91 2310991806</p>
+            <p>info@evnto.com</p>
+            <p>Chitkara university</p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="file:///C:/Users/lalit/OneDrive/Desktop/EVENTO/aboutus.html">About Us</a>
+            <a href="file:///C:/Users/lalit/OneDrive/Desktop/EVENTO/evento.html">Services</a>
+            <a href="file:///C:/Users/lalit/OneDrive/Desktop/EVENTO/contactus.html">Contact Us</a>
+        </div>
+        <div class="newsletter">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Enter your email" />
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+  
+</footer>
+</body>
+</html>
